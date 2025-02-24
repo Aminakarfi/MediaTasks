@@ -127,7 +127,7 @@
             <tr>
                 <th class="p-4">Days</th>
                 <th class="p-4">Daily Tasks</th>
-                <th class="p-4">Tasks Project </th>
+                <th class="p-4">Tasks Projet</th>
             </tr>
         </thead>
         <tbody>

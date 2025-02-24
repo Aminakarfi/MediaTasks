@@ -11,10 +11,10 @@ class TaskController extends Controller
     {
         // Validate the request
         $request->validate([
-            'user_id' => 'required|exists:users,id',  // Ensure the user ID exists in the users table
-            'day' => 'required|string',
-            'type' => 'required|in:daily,project',  // Ensure the type is either 'daily' or 'project'
-            'task' => 'required|string',
+            'user_id' => 'required|exists:users,id',
+        'day' => 'required|string',
+        'type' => 'required|string',
+        'task' => 'required|string',
         ]);
 
         // Retrieve user by ID
