@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Task;
 use App\Models\User; // Import the User model to associate tasks with users
+use Cron\DayOfWeekField;
+
+use function PHPSTORM_META\type;
 
 class TaskController extends Controller
+
 {
+
     public function store(Request $request)
     {
         // Validate the request
@@ -26,8 +31,10 @@ class TaskController extends Controller
             'day' => $request->day,
             'type' => $request->type,
             'task' => $request->task,
+            'mannagement' => $request->mannagement,
+            'cour' => $request->cour,
         ]);
-
+        // Round of bulding the relation between admin and user
         // Return success message with the task data
         return response()->json([
             'message' => 'Task saved successfully',

@@ -21,11 +21,10 @@ class AuthController extends Controller
         } else {
             // If the credentials are wrong, redirect back with an error
             return back()->withErrors(['message' => 'YOUR USERNAME OR YOUR PASSWORD IS INCORRECT.']);
-        }
-    }
-
+        } 
+    } 
     public function userLogin(Request $request)
-{
+{   
     // Validate user login
     $request->validate([
         'name' => 'required',
@@ -41,6 +40,7 @@ class AuthController extends Controller
         ['name' => 'Zakaria', 'password' => 'zakaria12', 'team' => 'Captation', 'route' => 'zakaria.page'],
     ];
 
+    
     // Check if user credentials match
     foreach ($validUsers as $user) {
         if ($request->name === $user['name'] && $request->password === $user['password'] && $request->team === $user['team']) {
@@ -54,3 +54,4 @@ class AuthController extends Controller
 
     
 }
+ 
